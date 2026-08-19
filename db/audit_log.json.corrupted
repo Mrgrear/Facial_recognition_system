@@ -1,0 +1,12 @@
+[
+    {
+        "timestamp": "2026-08-10T02:04:44.507880",
+        "username": "monica",
+        "event_type": "SPOOF_SIGNAL_DETECTED",
+        "details": {
+            "spoof_score": 0.7,
+            "sharpness_score": 1.0,
+            "laplacian_variance": 141.1,
+            "moire_score": 0.301,
+            "moire_strength": 0.699,
+            "moire_flagged": 

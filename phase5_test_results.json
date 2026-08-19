@@ -1,0 +1,84 @@
+{
+    "summary": {
+        "total_tests": 17,
+        "passed": 11,
+        "failed": 6,
+        "pass_rate": "64.71%",
+        "avg_face_detection": "0.00",
+        "avg_face_matching": "N/A",
+        "avg_liveness": "0.00",
+        "avg_ids_accuracy": "0.00",
+        "avg_response_time_ms": "0.22",
+        "security_incidents": 0
+    },
+    "detailed_results": [
+        {
+            "test": "Face Detection",
+            "timestamp": "2026-08-06T18:33:32.045339",
+            "passed": false,
+            "details": "0/10 frames - 0.00% accuracy"
+        },
+        {
+            "test": "Face Enrollment",
+            "timestamp": "2026-08-06T18:33:35.273943",
+            "passed": false,
+            "details": "Not enough frames: 0/5"
+        },
+        {
+            "test": "Liveness Detection",
+            "timestamp": "2026-08-06T18:33:40.905367",
+            "passed": true,
+            "details": "Blinks detected: False, Avg EAR: 0.0000"
+        },
+        {
+            "test": "Account Creation",
+            "timestamp": "2026-08-06T18:33:40.906346",
+            "passed": false,
+            "details": "Username already exists"
+        },
+        {
+            "test": "User Lookup",
+            "timestamp": "2026-08-06T18:33:40.906562",
+            "passed": true,
+            "details": "User auth_flow_test found"
+        },
+        {
+            "test": "Mark Authenticated",
+            "timestamp": "2026-08-06T18:33:40.929669",
+            "passed": true,
+            "details": "User marked as authenticated"
+        },
+        {
+            "test": "Session Creation",
+            "timestamp": "2026-08-06T18:33:40.933259",
+            "passed": true,
+            "details": "Session: dfbe9371..."
+        },
+        {
+            "test": "Authentication Flow",
+            "timestamp": "2026-08-06T18:33:40.933479",
+            "passed": false,
+            "details": "SessionManager.validate_session() missing 1 required positional argument: 'ip_address'"
+        },
+        {
+            "test": "IDS Normal Login",
+            "timestamp": "2026-08-06T18:33:40.937947",
+            "passed": false,
+            "details": "Alert: True, Level: HIGH, Reason: After-hours access detected"
+        },
+        {
+            "test": "IDS Threat Detection",
+            "timestamp": "2026-08-06T18:33:40.938298",
+            "passed": true,
+            "details": "Alert: True, Level: HIGH, Reason: After-hours access detected"
+        },
+        {
+            "test": "Security Features",
+            "timestamp": "2026-08-06T18:33:40.939222",
+            "passed": false,
+            "details": "'AccountManager' object has no attribute 'get_account'"
+        },
+        {
+            "test": "Face Detection Speed",
+            "timestamp": "2026-08-06T18:33:42.537382",
+            "passed": 

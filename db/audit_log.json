@@ -1,0 +1,235 @@
+[
+    {
+        "timestamp": "2026-08-10T02:08:50.571704",
+        "username": "monica",
+        "event_type": "AFTER_HOURS_OVERRIDE_APPLIED",
+        "details": {
+            "reason": "User is marked after-hours trusted by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-10T02:08:50.637611",
+        "username": "monica",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.132.114",
+            "confidence": 0.8437959551811218
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-10T02:08:50.639682",
+        "username": "monica",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.8438,
+            "ids_status": "LOW",
+            "session_id": "ecd74370"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-10T02:08:55.399036",
+        "username": "monica",
+        "event_type": "LOGOUT",
+        "details": {
+            "session": "ecd74370"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-10T02:09:45.521592",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "AFTER_HOURS_TRUST_TOGGLED",
+            "target_user": "monica",
+            "additional_details": "Set to False"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-10T02:10:33.653428",
+        "username": "monica",
+        "event_type": "IDS_ALERT",
+        "details": {
+            "alert_level": "HIGH",
+            "reason": "After-hours access detected"
+        },
+        "severity": "CRITICAL"
+    },
+    {
+        "timestamp": "2026-08-10T02:10:33.655886",
+        "username": "monica",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "IDS blocked login: After-hours access detected",
+            "ip_address": "192.168.132.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-10T02:11:49.160934",
+        "username": "nelly",
+        "event_type": "SIGNUP",
+        "details": {
+            "email": "nelly@gmail.com"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-10T02:12:11.967743",
+        "username": "nelly",
+        "event_type": "ENROLLMENT",
+        "details": {
+            "frames": 5
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-10T02:12:32.478105",
+        "username": "nelly",
+        "event_type": "LIVENESS_VERIFIED_SIGNUP",
+        "details": {
+            "blinks": 3
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-10T02:12:50.487489",
+        "username": "nelly",
+        "event_type": "IDS_ALERT",
+        "details": {
+            "alert_level": "HIGH",
+            "reason": "After-hours access detected"
+        },
+        "severity": "CRITICAL"
+    },
+    {
+        "timestamp": "2026-08-10T02:12:50.493018",
+        "username": "nelly",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "IDS blocked login: After-hours access detected",
+            "ip_address": "192.168.132.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-19T11:47:33.847691",
+        "username": "Chery",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "127.0.0.1"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-19T11:48:45.208046",
+        "username": "Chery",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "127.0.0.1"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-19T11:49:15.688147",
+        "username": "Chery",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "127.0.0.1"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-19T11:51:44.257398",
+        "username": "monica",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "127.0.0.1"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-19T11:53:23.117627",
+        "username": "ejim",
+        "event_type": "SIGNUP",
+        "details": {
+            "email": "ejimefu@gmail.com"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-19T11:53:54.649739",
+        "username": "ejim",
+        "event_type": "ENROLLMENT",
+        "details": {
+            "frames": 5
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-19T11:54:22.617798",
+        "username": "ejim",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "127.0.0.1"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-19T11:56:14.439677",
+        "username": "eji",
+        "event_type": "SIGNUP",
+        "details": {
+            "email": "ejimefu@gmail.com"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-19T11:56:31.644989",
+        "username": "eji",
+        "event_type": "ENROLLMENT",
+        "details": {
+            "frames": 5
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-19T11:56:49.138488",
+        "username": "eji",
+        "event_type": "LIVENESS_VERIFIED_SIGNUP",
+        "details": {
+            "blinks": 3
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-19T11:57:20.001266",
+        "username": "eji",
+        "event_type": "IDS_ALERT",
+        "details": {
+            "alert_level": "MEDIUM",
+            "reason": "IF anomaly (score:-0.02)"
+        },
+        "severity": "CRITICAL"
+    },
+    {
+        "timestamp": "2026-08-19T11:57:20.003746",
+        "username": "eji",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "IDS blocked login: IF anomaly (score:-0.02)",
+            "ip_address": "127.0.0.1"
+        },
+        "severity": "WARNING"
+    }
+]

@@ -1,0 +1,506 @@
+[
+    {
+        "timestamp": "2026-07-20T19:33:44.114040",
+        "username": "great",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-07-20T19:33:44.117253",
+        "username": "great",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 2"
+    },
+    {
+        "timestamp": "2026-07-20T19:33:44.121305",
+        "username": "great",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 3"
+    },
+    {
+        "timestamp": "2026-07-20T19:33:44.123115",
+        "username": "great",
+        "event": "ACCOUNT_LOCKED",
+        "details": "temp: Exceeded 3 consecutive failed attempts"
+    },
+    {
+        "timestamp": "2026-07-20T19:33:44.127006",
+        "username": "great",
+        "event": "ADMIN_UNLOCK",
+        "details": "Admin manually unlocked account"
+    },
+    {
+        "timestamp": "2026-07-20T19:33:44.135233",
+        "username": "user2",
+        "event": "SPOOF_ATTEMPT",
+        "details": "Spoof #1"
+    },
+    {
+        "timestamp": "2026-07-20T19:33:44.138256",
+        "username": "user2",
+        "event": "SPOOF_ATTEMPT",
+        "details": "Spoof #2"
+    },
+    {
+        "timestamp": "2026-07-20T19:33:44.140598",
+        "username": "user2",
+        "event": "ACCOUNT_LOCKED",
+        "details": "spoof: Repeated spoofing detected"
+    },
+    {
+        "timestamp": "2026-07-20T19:33:44.916847",
+        "username": "user3",
+        "event": "RECOVERY_INITIATED",
+        "details": "Admin: admin1 | Reason: User involved in accident \u2014 facial changes"
+    },
+    {
+        "timestamp": "2026-07-20T19:33:44.922120",
+        "username": "user3",
+        "event": "RECOVERY_COMPLETED",
+        "details": "New face enrolled by admin: admin1. Previous embedding replaced: True. All existing data preserved."
+    },
+    {
+        "timestamp": "2026-07-21T15:34:25.649069",
+        "username": "Great Omu",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-07-21T15:54:33.687530",
+        "username": "Great Omu",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-07-21T15:56:07.150164",
+        "username": "Great Omu",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-07-21T16:05:01.070260",
+        "username": "Israelonyedika",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-07-22T07:52:03.605136",
+        "username": "efu",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-07-23T10:32:41.954571",
+        "username": "great",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-07-23T10:32:41.967608",
+        "username": "great",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 2"
+    },
+    {
+        "timestamp": "2026-07-23T10:32:41.977585",
+        "username": "great",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 3"
+    },
+    {
+        "timestamp": "2026-07-23T10:32:41.982538",
+        "username": "great",
+        "event": "ACCOUNT_LOCKED",
+        "details": "temp: Exceeded 3 consecutive failed attempts"
+    },
+    {
+        "timestamp": "2026-07-23T10:32:41.990935",
+        "username": "great",
+        "event": "ADMIN_UNLOCK",
+        "details": "Admin manually unlocked account"
+    },
+    {
+        "timestamp": "2026-07-23T10:32:41.999092",
+        "username": "user2",
+        "event": "SPOOF_ATTEMPT",
+        "details": "Spoof #3"
+    },
+    {
+        "timestamp": "2026-07-23T10:32:42.002165",
+        "username": "user2",
+        "event": "ACCOUNT_LOCKED",
+        "details": "spoof: Repeated spoofing detected"
+    },
+    {
+        "timestamp": "2026-07-23T10:32:42.070903",
+        "username": "user3",
+        "event": "RECOVERY_INITIATED",
+        "details": "Admin: admin1 | Reason: User involved in accident \u2014 facial changes"
+    },
+    {
+        "timestamp": "2026-07-23T10:32:42.080743",
+        "username": "user3",
+        "event": "RECOVERY_COMPLETED",
+        "details": "New face enrolled by admin: admin1. Previous embedding replaced: True. All existing data preserved."
+    },
+    {
+        "timestamp": "2026-07-23T10:54:40.309291",
+        "username": "Gabriel",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-07-23T14:48:56.567691",
+        "username": "efu",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-07-23T14:49:46.300894",
+        "username": "Gabriel",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-07-23T14:50:26.887646",
+        "username": "Gabriel",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-07-23T14:53:21.897436",
+        "username": "efu",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-04T22:09:43.284707",
+        "username": "Chery",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-04T22:10:30.743226",
+        "username": "Chery",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 2"
+    },
+    {
+        "timestamp": "2026-08-06T04:52:09.076548",
+        "username": "Chery",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T04:57:33.743693",
+        "username": "Chery",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-06T04:57:38.991397",
+        "username": "Chery",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T04:58:51.620956",
+        "username": "Chery",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-06T04:59:00.406460",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:01:09.459254",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:01:10.822372",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:06:48.201480",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:06:49.497217",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:30:19.311230",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:30:20.453479",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:30:49.937230",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-06T05:38:58.104672",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:40:18.776287",
+        "username": "Chery",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:40:42.956531",
+        "username": "Chery",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-06T05:50:05.883330",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:50:14.350252",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:50:15.887768",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:51:22.560777",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:51:24.110540",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:51:53.763265",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-06T05:53:06.955057",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:53:07.842421",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-06T05:53:31.079337",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-07T12:55:42.734978",
+        "username": "Chery",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-07T16:55:20.304383",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-07T16:55:21.711996",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-07T16:56:05.798981",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-07T17:05:06.102878",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-07T17:05:47.803649",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-07T17:06:31.063931",
+        "username": "Chery",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-08T05:54:41.625757",
+        "username": "dgreat",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-10T01:10:04.250097",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-10T01:10:05.809410",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-10T01:10:51.159280",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-10T01:17:18.513456",
+        "username": "monica",
+        "event": "SPOOF_ATTEMPT",
+        "details": "Spoof #1"
+    },
+    {
+        "timestamp": "2026-08-10T01:24:44.651205",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-10T01:25:16.126883",
+        "username": "monica",
+        "event": "SPOOF_ATTEMPT",
+        "details": "Spoof #1"
+    },
+    {
+        "timestamp": "2026-08-10T01:41:55.799296",
+        "username": "monica",
+        "event": "SPOOF_ATTEMPT",
+        "details": "Spoof #2"
+    },
+    {
+        "timestamp": "2026-08-10T01:41:55.802488",
+        "username": "monica",
+        "event": "ACCOUNT_LOCKED",
+        "details": "spoof: Repeated spoofing detected"
+    },
+    {
+        "timestamp": "2026-08-10T01:42:55.814118",
+        "username": "Chery",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-10T01:42:56.943746",
+        "username": "Chery",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-10T02:04:08.947920",
+        "username": "monica",
+        "event": "AUTO_UNLOCK",
+        "details": "Temporary lockout expired"
+    },
+    {
+        "timestamp": "2026-08-10T02:05:13.756611",
+        "username": "monica",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-10T02:08:50.641626",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-10T02:09:45.495549",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-19T11:47:33.831424",
+        "username": "Chery",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-19T11:48:45.194772",
+        "username": "Chery",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 2"
+    },
+    {
+        "timestamp": "2026-08-19T11:49:15.659356",
+        "username": "Chery",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 3"
+    },
+    {
+        "timestamp": "2026-08-19T11:49:15.668831",
+        "username": "Chery",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-19T11:51:44.223710",
+        "username": "monica",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-19T11:51:44.235445",
+        "username": "monica",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-19T11:54:22.593571",
+        "username": "ejim",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    }
+]

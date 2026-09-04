@@ -1,6 +1,6 @@
 # Enhanced Facial Authentication System with Hybrid IDS
 
-A Python-based security system that combines **facial authentication, liveness/anti-spoofing checks, audit logging, session controls, and a hybrid machine-learning intrusion detection system (IDS)** in a desktop GUI.
+A Python-based security system that combines **facial authentication, liveness and anti-spoofing checks, audit logging, session controls, and a hybrid machine-learning intrusion detection system (IDS)** in a desktop GUI.
 
 > **Academic project:** Nigerian Army University Biu (NAUB), Department of Cyber Security  
 > **Student:** Omu John Efu (CYB/23U/3983)  
@@ -8,69 +8,84 @@ A Python-based security system that combines **facial authentication, liveness/a
 
 ## Overview
 
-The project is designed as a layered authentication and monitoring platform. A user is verified through facial recognition, while liveness and anti-spoofing controls help distinguish a live user from presentation attacks such as photographs or screen replays. Authentication events are logged and supplied to a hybrid IDS that combines supervised and unsupervised machine learning.
+The system is designed as a layered authentication and security-monitoring platform. A user is verified through facial recognition, while liveness and anti-spoofing controls help detect presentation attacks. Authentication and network activity are recorded and analysed by a hybrid IDS that combines supervised and unsupervised machine learning.
 
-The current implementation includes a production-style Tkinter GUI and separates the major security functions into authentication (`auth/`), intrusion detection (`ids/`), GUI (`GUI/`), utilities (`utils/`), data (`dataset/` and `db/`), and analysis outputs (`docs/results/`).
+The implementation is organized into authentication (`auth/`), intrusion detection (`ids/`), graphical interface (`GUI/`), utilities (`utils/`), local data/model storage (`db/` and `models/`), datasets (`dataset/`), and documentation/evaluation outputs (`docs/`).
 
 ## Key Features
 
-- **Face detection** using InsightFace/face-analysis components.
-- **Face recognition** using ArcFace-style embeddings and cosine similarity matching.
-- **Liveness detection** using blink-based verification and Eye Aspect Ratio (EAR).
-- **Multi-signal anti-spoofing** combining independent visual signals and calibrated thresholds.
-- **Burst verification** to reduce dependence on a single video frame.
-- **Authentication management** including account handling and failed-attempt controls.
-- **Session management** with configurable session timeout.
-- **Audit logging** of authentication/security events.
-- **Hybrid IDS** using Random Forest classification and Isolation Forest anomaly detection.
-- **Network monitoring** for collecting network-related security features.
-- **Feature extraction** for building IDS input vectors from authentication and network events.
-- **Administrator and monitoring GUI** for system operation and security visibility.
-- **Evaluation/visualisation scripts** for embeddings, anti-spoofing signals, and authentication performance.
+- Face detection using InsightFace.
+- Face recognition using ArcFace-style embeddings and similarity matching.
+- Blink-based liveness verification using Eye Aspect Ratio (EAR).
+- Multi-signal anti-spoofing with calibrated thresholds.
+- Burst verification to reduce dependence on a single frame.
+- Account management and failed-attempt controls.
+- Session management and authentication-state handling.
+- Audit logging of security events.
+- Hybrid IDS using Random Forest classification and Isolation Forest anomaly detection.
+- Network monitoring and IDS feature extraction.
+- Administrator and monitoring interfaces.
+- Evaluation/calibration utilities for biometric and IDS experiments.
 
-## Architecture
+## System Architecture
 
 ```text
-                           +----------------------+
-                           |      main.py         |
-                           |   Application Entry  |
-                           +----------+-----------+
-                                      |
-                                      v
-                           +----------------------+
-                           |     GUI/main_gui.py  |
-                           |   Tkinter Application |
-                           +----------+-----------+
-                                      |
-                    +-----------------+-----------------+
-                    |                                   |
-                    v                                   v
-          +-------------------+                +-------------------+
-          | Authentication    |                | Security Monitor  |
-          |      auth/         |                |       ids/         |
-          +---------+---------+                +---------+---------+
-                    |                                    |
-        +-----------+-----------+              +---------+----------+
-        |           |           |              |         |          |
-        v           v           v              v         v          v
-   Detection   Recognition  Liveness/      Feature   Network    Hybrid IDS
-                            Anti-Spoof      Extractor  Monitor  RF + IF
-        |           |           |              |         |          |
-        +-----------+-----------+--------------+---------+----------+
-                                      |
-                                      v
-                           +----------------------+
-                           | Audit / Session / DB |
-                           |       db/            |
-                           +----------------------+
+                         +----------------------+
+                         |       main.py        |
+                         |  Application Entry    |
+                         +----------+-----------+
+                                    |
+                                    v
+                         +----------------------+
+                         |   GUI/main_gui.py    |
+                         |    Tkinter GUI        |
+                         +----------+-----------+
+                                    |
+                 +------------------+------------------+
+                 |                                     |
+                 v                                     v
+       +--------------------+                +--------------------+
+       | Authentication     |                | Security / IDS     |
+       |      auth/         |                |       ids/         |
+       +---------+----------+                +---------+----------+
+                 |                                     |
+     +-----------+-----------+              +----------+----------+
+     |           |           |              |          |          |
+     v           v           v              v          v          v
+ Detection  Recognition  Liveness/      Features  Network     Hybrid IDS
+                         Anti-Spoof      Extractor  Monitor    RF + IF
+     |           |           |              |          |          |
+     +-----------+-----------+--------------+----------+----------+
+                                    |
+                                    v
+                         +----------------------+
+                         | Audit / Session / DB |
+                         |       db/            |
+                         +----------------------+
 ```
 
-## Project Structure
+## Repository Structure
 
 ```text
 Facial_recognition_system/
-├── main.py                         # Main application entry point
-├── GUI/                            # Desktop GUI and pages/components
+├── main.py                    # Primary application entry point
+├── setup_and_run.py           # Optional setup/scaffolding utility
+├── requirements.txt           # Python dependencies
+├── LICENSE                    # Project usage/copyright notice
+├── README.md                  # Main project documentation
+├── .gitignore                 # Ignores local/sensitive generated data
+│
+├── auth/                      # Biometric authentication and security logic
+│   ├── account_manager.py
+│   ├── anti_spoof.py
+│   ├── audit_logger.py
+│   ├── auth_system.py
+│   ├── face_detector.py
+│   ├── face_recognizer.py
+│   ├── liveness_detector.py
+│   └── session_manager.py
+│
+├── GUI/                      # Tkinter desktop interface
 │   ├── main_gui.py
 │   ├── config.py
 │   ├── styles.py
@@ -79,46 +94,35 @@ Facial_recognition_system/
 │   │   ├── login_page.py
 │   │   ├── admin_panel.py
 │   │   └── monitoring_page.py
-│   │   └── components/
-│   └── ...
-├── auth/                           # Authentication and biometric security
-│   ├── auth_system.py
-│   ├── account_manager.py
-│   ├── face_detector.py
-│   ├── face_recognizer.py
-│   ├── liveness_detector.py
-│   ├── anti_spoof.py
-│   ├── session_manager.py
-│   └── audit_logger.py
-├── ids/                            # Intrusion detection subsystem
+│   └── components/
+│
+├── ids/                      # Hybrid intrusion detection subsystem
 │   ├── hybrid_ids.py
 │   ├── feature_extractor.py
 │   ├── network_monitor.py
 │   ├── dataset_generator.py
 │   └── train_ids.py
-├── utils/                          # Enrollment and diagnostic utilities
-│   ├── enroll_face.py
-│   ├── find_cameras.py
-│   ├── arcface_test.py
-│   └── test_*.py
-├── dataset/                        # Training/experimental datasets
-├── db/                             # Local application data and models
+│
+├── utils/                    # Enrollment, diagnostics and test helpers
+├── dataset/                  # Training/experimental data
+├── db/                       # Local runtime state (kept out of public Git)
+├── models/                   # Trained model artifacts (kept out of public Git)
+│
 ├── docs/
-│   └── results/                    # Evaluation figures and visual outputs
-├── calibrate_anti_spoof.py         # Anti-spoof calibration utility
-├── generate_*.py                   # Evaluation/data-generation utilities
-├── visualize_embeddings.py         # Embedding visualisation
-├── testing_framework*.py           # System evaluation frameworks
-└── .gitignore
+│   ├── PROJECT_STRUCTURE.md
+│   └── results/              # Evaluation figures
+│
+├── calibrate_anti_spoof.py   # Anti-spoof calibration
+└── visualize_embeddings.py   # Embedding visualization
 ```
 
-> The tree above describes the intended organization. The source modules retain their existing import paths so the application can be run without a large-scale refactor.
+Generated `__pycache__` directories and runtime biometric/model data are intentionally excluded from version control. The repository should contain source code and reproducible documentation, not private user data.
 
 ## Technologies
 
 | Area | Technology |
 |---|---|
-| Language | Python 3 |
+| Programming language | Python 3 |
 | GUI | Tkinter |
 | Computer vision | OpenCV |
 | Face analysis | InsightFace |
@@ -127,44 +131,48 @@ Facial_recognition_system/
 | Machine learning | scikit-learn |
 | Data processing | pandas |
 | Visualisation | Matplotlib |
-| System/network monitoring | psutil |
 | Image handling | Pillow |
+| System/network monitoring | psutil |
+| ONNX inference | ONNX Runtime |
 
-## How the Authentication Pipeline Works
+## Authentication Workflow
 
-1. The application starts through `main.py` and launches the Tkinter GUI.
-2. The camera subsystem captures frames in a background thread so camera processing does not block the GUI.
-3. A face is detected and an embedding is produced for recognition.
-4. The live user is checked using blink/liveness logic.
-5. Anti-spoofing signals are evaluated and combined using the calibrated detector.
-6. The face similarity score is compared with the configured recognition threshold.
-7. Authentication, lockout, session, and audit information is updated.
-8. Relevant authentication/network features are supplied to the IDS.
-9. The hybrid IDS combines Random Forest classification with Isolation Forest anomaly detection to identify suspicious activity.
+1. `main.py` starts the desktop application.
+2. `GUI/main_gui.py` coordinates the GUI pages.
+3. Camera frames are captured for authentication.
+4. A face is detected and an embedding is generated.
+5. The embedding is compared against enrolled identities.
+6. Liveness is verified using blink/EAR behaviour.
+7. Anti-spoofing signals are evaluated, including burst verification where configured.
+8. Authentication and session state are updated.
+9. Security events are written to the local audit system.
+10. Relevant authentication/network features are passed to the IDS.
+11. The hybrid IDS evaluates the event using classification and anomaly detection.
+12. The GUI reports the resulting authentication/security state.
 
-## Hybrid IDS
+## Hybrid Intrusion Detection System
 
-The IDS subsystem contains three main stages:
+The IDS is divided into complementary stages:
 
-### 1. Feature extraction
+### Feature extraction
 
-`ids/feature_extractor.py` converts authentication and network observations into a structured feature vector.
+`ids/feature_extractor.py` converts authentication and network observations into structured features suitable for machine-learning models.
 
-### 2. Supervised detection
+### Random Forest classification
 
-`ids/hybrid_ids.py` uses a **Random Forest** classifier for labelled security events.
+The supervised component uses **Random Forest** to classify labelled security events. It is useful when examples of known normal and suspicious behaviours are available.
 
-### 3. Unsupervised anomaly detection
+### Isolation Forest anomaly detection
 
-An **Isolation Forest** model provides an additional anomaly signal for activity that differs from normal behaviour.
+The unsupervised component uses **Isolation Forest** to identify observations that differ from learned normal behaviour. This provides an additional signal for previously unseen or unusual activity.
 
-This hybrid approach is intended to provide both known-event classification and anomaly detection rather than relying on one detection technique.
+The combination is intended to reduce reliance on a single detection technique and provide both known-pattern classification and anomaly detection.
 
-## Anti-Spoofing and Liveness
+## Liveness and Anti-Spoofing
 
-The anti-spoofing subsystem is implemented in `auth/anti_spoof.py`, while blink-based liveness is handled by `auth/liveness_detector.py`.
+The liveness subsystem uses blink/EAR-based verification, while `auth/anti_spoof.py` provides additional anti-spoofing logic. Calibration and evaluation scripts are included so thresholds can be studied under different cameras and lighting conditions.
 
-The repository also contains calibration and evaluation utilities for determining suitable thresholds on the target camera and lighting conditions. The generated figures in `docs/results/` provide visual evidence for the evaluation work.
+The repository includes evaluation figures for EAR behaviour, anti-spoof scores, burst verification, three-signal analysis, and authentication performance.
 
 ## Installation
 
@@ -177,31 +185,29 @@ cd Facial_recognition_system
 
 ### 2. Create a virtual environment
 
-Windows:
+**Windows**
 
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-Linux/macOS:
+**Linux/macOS**
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3. Install the project dependencies
-
-Install the Python packages required by the modules in the repository. A typical environment includes:
+### 3. Install dependencies
 
 ```bash
-pip install numpy opencv-python pillow insightface onnxruntime scikit-learn pandas matplotlib psutil
+pip install -r requirements.txt
 ```
 
-If a package installation fails because of the local Python version or hardware-specific InsightFace/ONNX requirements, use the compatible package versions for that Python environment.
+> InsightFace/ONNX Runtime can have Python-version and platform-specific requirements. If installation fails, use a Python version supported by the installed InsightFace/ONNX Runtime packages.
 
-## Running the System
+## Running the Application
 
 From the repository root:
 
@@ -209,11 +215,11 @@ From the repository root:
 python main.py
 ```
 
-The GUI entry point is `GUI/main_gui.py` and the main application imports it from `main.py`.
+`main.py` is the supported application entry point and launches `GUI/main_gui.py`.
 
-## Useful Utilities
+## Useful Commands
 
-### Face enrollment
+### Enrol a face
 
 ```bash
 python utils/enroll_face.py
@@ -233,8 +239,6 @@ python calibrate_anti_spoof.py
 
 ### Train the IDS
 
-The IDS training workflow uses the dataset-generation/training scripts in the repository. For the dedicated IDS trainer:
-
 ```bash
 python ids/train_ids.py
 ```
@@ -245,44 +249,50 @@ python ids/train_ids.py
 python visualize_embeddings.py
 ```
 
-## Data and Security Notes
+## Data and Security
 
-- Do **not** commit real users' biometric images, credentials, API keys, or other sensitive information.
-- Local databases and generated model files may contain sensitive biometric/security information; protect them appropriately when deploying the system.
-- Use synthetic or anonymised data for demonstrations and public repositories whenever possible.
-- Camera index and anti-spoof thresholds are hardware/environment dependent and should be calibrated before deployment.
+This is a biometric-security project, so repository hygiene is important.
 
-## Evaluation Outputs
+- Never commit real users' face images, embeddings, passwords, email addresses, API keys, or audit records.
+- Runtime files under `db/` and trained artifacts under `models/` may contain sensitive information and are ignored by Git.
+- Use synthetic, anonymised, or explicitly approved sample data for demonstrations.
+- Camera settings and anti-spoof thresholds should be calibrated for the deployment environment.
+- Do not treat this academic prototype as production-ready without additional security, privacy, performance, and usability testing.
 
-The `docs/results/` directory contains generated evaluation figures covering areas such as:
+## Evaluation Results
 
-- ArcFace embedding visualisation
-- EAR distribution and threshold analysis
-- FAR/FRR/DET performance
+Generated figures are stored in `docs/results/` instead of cluttering the repository root. They include analyses of:
+
+- ArcFace embedding distributions/visualisation
+- EAR distributions and thresholds
+- FAR/FRR and DET performance
 - Anti-spoof score distributions
-- Anti-spoof burst verification
-- Three-signal contribution analysis
+- Burst verification performance
+- Three-signal anti-spoof contribution
 
-These figures support the experimental/evaluation stage of the project and are separate from the runtime source code.
+## Development Guidelines
 
-## Development Notes
+Keep new code in the subsystem responsible for it:
 
-The repository intentionally separates runtime modules from diagnostic and evaluation utilities. Before adding new functionality, place code in the subsystem it belongs to rather than adding another large script to the repository root.
-
-Recommended locations:
-
-- Authentication/biometric logic → `auth/`
-- IDS and security analytics → `ids/`
-- GUI functionality → `GUI/`
-- Small diagnostics/enrollment helpers → `utils/`
-- Evaluation figures → `docs/results/`
+- Authentication/biometrics → `auth/`
+- Intrusion detection/network security → `ids/`
+- GUI → `GUI/`
+- Small operational utilities → `utils/`
+- Documentation/evaluation figures → `docs/`
 - Datasets → `dataset/`
-- Runtime/local state → `db/`
+- Local runtime state → `db/`
+- Trained model artifacts → `models/`
 
-## Project Status
+Avoid adding large experimental scripts or generated data directly to the repository root.
 
-This repository represents an academic prototype/final-year project implementation. It is suitable for research, demonstration, and controlled testing, but should undergo additional security, privacy, performance, and usability testing before production deployment.
+## Academic Project
+
+**Institution:** Nigerian Army University Biu (NAUB)  
+**Faculty:** Faculty of Computing  
+**Department:** Cyber Security  
+**Student:** Omu John Efu (CYB/23U/3983)  
+**Supervisor:** Dr. A. H. Desina
 
 ## License
 
-No license is currently specified for this repository. Until a license is added, the source should be treated as **all rights reserved**.
+This project is currently distributed under the repository's **all-rights-reserved academic project notice**. See [`LICENSE`](LICENSE) for details.

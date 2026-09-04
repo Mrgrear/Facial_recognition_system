@@ -35,11 +35,20 @@ class LivenessDetector:
         import urllib.request
         import os
         model_path = "models/face_landmarker.task"
+        
+        # Create models directory if it doesn't exist
+        os.makedirs("models", exist_ok=True)
+        
         if not os.path.exists(model_path):
             print("Downloading MediaPipe face landmarker model...")
             url = "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task"
-            urllib.request.urlretrieve(url, model_path)
-            print("Download complete.")
+            try:
+                urllib.request.urlretrieve(url, model_path)
+                print("✅ Download complete.")
+            except Exception as e:
+                print(f"❌ Download failed: {e}")
+        else:
+            print(f"✅ Model found at: {model_path}")
         return model_path
 
     def eye_aspect_ratio(self, landmarks, eye_indices):

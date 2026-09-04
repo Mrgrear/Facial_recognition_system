@@ -1,84 +1,131 @@
 {
     "summary": {
-        "total_tests": 17,
-        "passed": 11,
-        "failed": 6,
-        "pass_rate": "64.71%",
-        "avg_face_detection": "0.00",
+        "total_tests": 19,
+        "passed": 15,
+        "failed": 4,
+        "pass_rate": "78.95%",
+        "avg_face_detection": "100.00",
         "avg_face_matching": "N/A",
         "avg_liveness": "0.00",
         "avg_ids_accuracy": "0.00",
-        "avg_response_time_ms": "0.22",
+        "avg_response_time_ms": "113.05",
         "security_incidents": 0
     },
     "detailed_results": [
         {
             "test": "Face Detection",
-            "timestamp": "2026-08-06T18:33:32.045339",
-            "passed": false,
-            "details": "0/10 frames - 0.00% accuracy"
-        },
-        {
-            "test": "Face Enrollment",
-            "timestamp": "2026-08-06T18:33:35.273943",
-            "passed": false,
-            "details": "Not enough frames: 0/5"
+            "timestamp": "2026-08-21T13:36:08.837893",
+            "passed": true,
+            "details": "10/10 frames - 100.00% accuracy"
         },
         {
             "test": "Liveness Detection",
-            "timestamp": "2026-08-06T18:33:40.905367",
+            "timestamp": "2026-08-21T13:36:22.286624",
             "passed": true,
             "details": "Blinks detected: False, Avg EAR: 0.0000"
         },
         {
             "test": "Account Creation",
-            "timestamp": "2026-08-06T18:33:40.906346",
-            "passed": false,
-            "details": "Username already exists"
+            "timestamp": "2026-08-21T13:36:22.303468",
+            "passed": true,
+            "details": "Account created for auth_flow_test"
         },
         {
             "test": "User Lookup",
-            "timestamp": "2026-08-06T18:33:40.906562",
+            "timestamp": "2026-08-21T13:36:22.303584",
             "passed": true,
             "details": "User auth_flow_test found"
         },
         {
             "test": "Mark Authenticated",
-            "timestamp": "2026-08-06T18:33:40.929669",
+            "timestamp": "2026-08-21T13:36:22.320420",
             "passed": true,
             "details": "User marked as authenticated"
         },
         {
             "test": "Session Creation",
-            "timestamp": "2026-08-06T18:33:40.933259",
+            "timestamp": "2026-08-21T13:36:22.322651",
             "passed": true,
-            "details": "Session: dfbe9371..."
+            "details": "Session: f3d550df..."
         },
         {
-            "test": "Authentication Flow",
-            "timestamp": "2026-08-06T18:33:40.933479",
-            "passed": false,
-            "details": "SessionManager.validate_session() missing 1 required positional argument: 'ip_address'"
+            "test": "Session Validation",
+            "timestamp": "2026-08-21T13:36:22.324841",
+            "passed": true,
+            "details": "Session valid: (True, 'Session valid')"
+        },
+        {
+            "test": "Session Termination",
+            "timestamp": "2026-08-21T13:36:22.334904",
+            "passed": true,
+            "details": "Session ended"
         },
         {
             "test": "IDS Normal Login",
-            "timestamp": "2026-08-06T18:33:40.937947",
+            "timestamp": "2026-08-21T13:36:22.601099",
             "passed": false,
-            "details": "Alert: True, Level: HIGH, Reason: After-hours access detected"
+            "details": "Alert: True, Level: MEDIUM, Reason: IF anomaly (score:-0.00)"
         },
         {
             "test": "IDS Threat Detection",
-            "timestamp": "2026-08-06T18:33:40.938298",
+            "timestamp": "2026-08-21T13:36:22.787700",
             "passed": true,
-            "details": "Alert: True, Level: HIGH, Reason: After-hours access detected"
+            "details": "Alert: True, Level: HIGH, Reason: RF+IF flagged (RF:0.62)"
+        },
+        {
+            "test": "Account Lockout",
+            "timestamp": "2026-08-21T13:36:22.867325",
+            "passed": false,
+            "details": "Account locked: False"
+        },
+        {
+            "test": "Audit Logging",
+            "timestamp": "2026-08-21T13:36:22.877711",
+            "passed": true,
+            "details": "Login events: 1"
         },
         {
             "test": "Security Features",
-            "timestamp": "2026-08-06T18:33:40.939222",
+            "timestamp": "2026-08-21T13:36:22.900342",
             "passed": false,
-            "details": "'AccountManager' object has no attribute 'get_account'"
+            "details": "'SessionManager' object has no attribute 'get_session'"
         },
         {
             "test": "Face Detection Speed",
-            "timestamp": "2026-08-06T18:33:42.537382",
-            "passed": 
+            "timestamp": "2026-08-21T13:36:28.646572",
+            "passed": false,
+            "details": "Avg: 113.05ms"
+        },
+        {
+            "test": "Workflow: Registration",
+            "timestamp": "2026-08-21T13:36:28.696838",
+            "passed": true,
+            "details": "User registered"
+        },
+        {
+            "test": "Workflow: Enrollment",
+            "timestamp": "2026-08-21T13:36:28.751669",
+            "passed": true,
+            "details": "Face enrolled"
+        },
+        {
+            "test": "Workflow: Authentication",
+            "timestamp": "2026-08-21T13:36:28.790348",
+            "passed": true,
+            "details": "User authenticated"
+        },
+        {
+            "test": "Workflow: Session Created",
+            "timestamp": "2026-08-21T13:36:28.796465",
+            "passed": true,
+            "details": "Session active"
+        },
+        {
+            "test": "Workflow: Logout",
+            "timestamp": "2026-08-21T13:36:28.803868",
+            "passed": true,
+            "details": "Session terminated"
+        }
+    ],
+    "timestamp": "2026-08-21T13:36:28.853301"
+}

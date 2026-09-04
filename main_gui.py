@@ -762,6 +762,11 @@ class FacialAuthSystem:
         self.root.bind("<space>", lambda e: self._safe(self._check_blink_burst)())
         self._video_loop(self.wcam, overlay_text="Blink, then press SPACE")
 
+    # ══════════════════════════════════════════════════════════════════════
+    #   ⭐ SECURITY FIX APPLIED HERE ⭐
+    #   Liveness is now bound to the SAME identity confirmed during face
+    #   recognition. A blink from a different face can no longer pass.
+    # ══════════════════════════════════════════════════════════════════════
     def _check_blink_burst(self):
         if self._live_busy:
             return
@@ -772,9 +777,21 @@ class FacialAuthSystem:
 
         blinks_before = self._live_confirmed
 
+        # SECURITY FIX: liveness must be bound to the SAME identity that
+        # was matched during face recognition. Without this, the blink
+        # step accepts a blink from ANY face in frame — including a
+        # different person standing in after the enrolled user's face
+        # passed recognition. We re-verify identity on the exact frame
+        # that produced the blink, reusing the same embedding-comparison
+        # logic already used in _try_face_match().
+        stored_raw = self.auth_system.users.get(self.current_user, {}).get("embedding")
+        stored_emb = list_to_emb(stored_raw) if stored_raw else \
+                     self.face_recognizer.database.get(self.current_user)
+
         def work():
             frames = self.cam.get_burst(BURST_FRAMES)
             detected = False
+            identity_mismatch = False
             last_ear = 0.0
             min_ear = 999.0
             for f in frames:
@@ -783,9 +800,25 @@ class FacialAuthSystem:
                 if ear > 0:
                     min_ear = min(min_ear, ear)
                 if blinks > blinks_before:
-                    detected = True
-                    break  # stop early once a blink is confirmed
-            return (detected, last_ear, min_ear)
+                    # A blink was just confirmed on frame f — before
+                    # accepting it, verify the face performing the
+                    # blink is still the enrolled user.
+                    if stored_emb is not None:
+                        cur_emb = self.face_recognizer.get_embedding(f)
+                        sim = cosine_sim(cur_emb, stored_emb) if cur_emb is not None else 0.0
+                        if sim >= FACE_THRESHOLD:
+                            detected = True
+                        else:
+                            # Real blink, but from the WRONG face — reject
+                            # it and roll the detector's internal counter
+                            # back so it doesn't silently keep the credit.
+                            identity_mismatch = True
+                            self.liveness_det.blink_counter = blinks_before
+                    else:
+                        identity_mismatch = True
+                        self.liveness_det.blink_counter = blinks_before
+                    break  # a decision was made — stop sampling this burst
+            return (detected, last_ear, min_ear, identity_mismatch)
 
         def done(ok, result):
             self._live_busy = False
@@ -797,7 +830,14 @@ class FacialAuthSystem:
                 self._append(self.live_log, f"⚠ Error: {result}")
                 return
 
-            detected, last_ear, min_ear = result
+            detected, last_ear, min_ear, identity_mismatch = result
+            if identity_mismatch:
+                self._append(self.live_log, "🚫 Blink detected but face identity did not match — rejected.")
+                self.audit_log.log_event(
+                    self.current_user, "LIVENESS_IDENTITY_MISMATCH",
+                    {"note": "Blink confirmed from a face that did not match the enrolled identity"},
+                    "WARNING"
+                )
             self._live_attempts += 1
             if detected:
                 self._live_confirmed += 1

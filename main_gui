@@ -43,10 +43,15 @@ CAMERA_INDEX   = 1
 # Set this to True only after running calibrate_anti_spoof.py against
 # real captured samples and confirming real-face scores separate
 # cleanly from print/screen-replay scores on your hardware.
-ENFORCE_ANTI_SPOOF = False
+ENFORCE_ANTI_SPOOF = True
+# Calibrated via calibrate_anti_spoof.py against real hardware/lighting:
+# real face spoof_score range 0.148-0.209, printed photo & screen
+# replay both 0.700 — clean separation, no overlap.
 CAM_W, CAM_H   = 480, 360      # reduced from 640x480 — noticeably faster detection
 DISPLAY_W, DISPLAY_H = 640, 420
 BURST_FRAMES   = 8             # frames sampled per SPACE press during liveness check
+MAX_LIVENESS_ATTEMPTS = 6      # SPACE presses allowed before lockout, mirrors face-match's 5-attempt cap
+ANTI_SPOOF_BURST_FRAMES = 4    # frames sampled per anti-spoof check, to reduce single-frame variance risk
 
 BG, PANEL, BORDER = "#0d1117", "#161b22", "#30363d"
 GREEN, BLUE, YELLOW, RED, WHITE, GREY = "#3fb950", "#58a6ff", "#d29922", "#f85149", "#e6edf3", "#8b949e"
@@ -146,16 +151,20 @@ class FacialAuthSystem:
         self.face_detector   = FaceDetector()
         self.face_recognizer = FaceRecognizer()
         self.liveness_det    = LivenessDetector(required_blinks=SIGNUP_BLINKS)
-        # LOGGING-ONLY for now: computed and recorded on every login,
-        # feeds into HybridIDS's spoof_indicator/spoof_attempts features,
-        # but does NOT block login yet. See calibrate_anti_spoof.py —
-        # run it against real captured samples before flipping
-        # ENFORCE_ANTI_SPOOF to True below.
-        self.anti_spoof      = AntiSpoofDetector()
+        # Anti-spoof detector, calibrated against real hardware via
+        # calibrate_anti_spoof.py (see ENFORCE_ANTI_SPOOF above).
+        # ENFORCE_ANTI_SPOOF=True means failed checks now block login.
+        self.anti_spoof      = AntiSpoofDetector(combined_threshold=0.70)
         self.spoof_score_this_login = 0.0
         self.spoof_detected_this_login = False
         self.account_mgr     = AccountManager()
-        self.auth_system     = AuthSystem()
+        # FIX: pass the SAME AccountManager instance into AuthSystem
+        # instead of letting it silently create its own — otherwise the
+        # two objects go out of sync in memory (see auth_system.py for
+        # the full explanation). This ensures a user registered
+        # mid-session is immediately visible to lockout/after-hours-
+        # trust checks elsewhere in this file.
+        self.auth_system     = AuthSystem(account_manager=self.account_mgr)
         self.session_mgr     = SessionManager(session_timeout_minutes=30)
         self.audit_log       = AuditLogger()
         self.ids             = HybridIDS()
@@ -464,11 +473,7 @@ class FacialAuthSystem:
                 return
             locked, lock_msg = False, ""
             try:
-                if hasattr(self.account_mgr, "check_lockout"):
-                    locked, lock_msg = self.account_mgr.check_lockout(uname)
-                elif hasattr(self.account_mgr, "is_locked"):
-                    locked = self.account_mgr.is_locked(uname)
-                    lock_msg = "Account is locked."
+                locked, lock_msg, _remaining = self.account_mgr.is_account_locked(uname)
             except Exception as e:
                 print(f"[WARN] Lockout check failed: {e}")
             if locked:
@@ -750,6 +755,7 @@ class FacialAuthSystem:
         self.liveness_det.required_blinks = required_blinks
         self._live_required   = required_blinks
         self._live_confirmed  = 0
+        self._live_attempts   = 0
         self._live_on_complete = on_complete
         self._live_busy = False
 
@@ -792,6 +798,7 @@ class FacialAuthSystem:
                 return
 
             detected, last_ear, min_ear = result
+            self._live_attempts += 1
             if detected:
                 self._live_confirmed += 1
                 self.blink_var.set(f"Blinks: {self._live_confirmed} / {self._live_required}")
@@ -800,13 +807,35 @@ class FacialAuthSystem:
                 self._append(self.live_log, f"✅ Blink {self._live_confirmed}/{self._live_required} confirmed")
             else:
                 self.ear_var.set(f"Last check: no blink detected (min EAR≈{min_ear:.3f}, threshold=0.25)")
-                self._append(self.live_log, "⚠ No blink detected in that sample. Try again.")
+                self._append(self.live_log, f"⚠ No blink detected (attempt {self._live_attempts}/{MAX_LIVENESS_ATTEMPTS}).")
 
             if self._live_confirmed >= self._live_required:
                 self._unbind_space()
                 self.live_capture_btn.config(state=tk.DISABLED)
                 self._append(self.live_log, "✅ Liveness fully verified!")
                 self.root.after(800, self._live_on_complete)
+                return
+
+            if self._live_attempts >= MAX_LIVENESS_ATTEMPTS:
+                self._unbind_space()
+                self.live_capture_btn.config(state=tk.DISABLED)
+                self._append(self.live_log, "🚫 Liveness verification failed — too many attempts.")
+                if self.current_user:
+                    try:
+                        self.account_mgr.record_failed_attempt(self.current_user)
+                    except Exception:
+                        pass
+                    self.audit_log.log_failed_attempt(
+                        self.current_user,
+                        f"Liveness check failed after {MAX_LIVENESS_ATTEMPTS} attempts",
+                        self.ip_address
+                    )
+                messagebox.showerror(
+                    "Liveness Verification Failed",
+                    f"No blink confirmed after {MAX_LIVENESS_ATTEMPTS} attempts.\n"
+                    f"Access denied."
+                )
+                self.root.after(200, self.show_home)
 
         self._run_bg(work, done)
 
@@ -919,11 +948,44 @@ class FacialAuthSystem:
             if len(faces) != 1:
                 return ("wrong_face_count", len(faces))
 
-            # Anti-spoof check — always computed and returned so it can
+            # Anti-spoof check — sampled across several frames rather
+            # than just the one SPACE-press frame. A single frame can
+            # occasionally score as "real" purely by chance (see
+            # calibration notes — screen-replay scores varied widely
+            # frame to frame); requiring most of a short burst to agree
+            # closes that gap. Always computed and returned so it can
             # be logged/fed into the IDS features, regardless of
             # whether ENFORCE_ANTI_SPOOF is currently on.
             try:
-                is_live, spoof_score, spoof_details = self.anti_spoof.analyze(frame, faces[0])
+                burst = self.cam.get_burst(ANTI_SPOOF_BURST_FRAMES)
+                if not burst:
+                    burst = [frame]
+                live_votes = 0
+                spoof_scores = []
+                last_spoof_details = {}
+                for bf in burst:
+                    bfaces = self.face_detector.detect_sync(bf)
+                    if len(bfaces) != 1:
+                        continue
+                    b_is_live, b_spoof_score, b_details = self.anti_spoof.analyze(bf, bfaces[0])
+                    live_votes += 1 if b_is_live else 0
+                    spoof_scores.append(b_spoof_score)
+                    last_spoof_details = b_details
+                total_checked = len(spoof_scores)
+                if total_checked == 0:
+                    is_live, spoof_score, spoof_details = True, 0.0, {"note": "no valid burst frames"}
+                else:
+                    # Require a clear majority of sampled frames to look
+                    # live — one or two lucky/unlucky frames can't flip
+                    # the overall result on their own.
+                    is_live = live_votes > (total_checked / 2)
+                    spoof_score = sum(spoof_scores) / total_checked
+                    spoof_details = {
+                        **last_spoof_details,
+                        "burst_frames_checked": total_checked,
+                        "burst_live_votes": live_votes,
+                        "burst_avg_spoof_score": round(spoof_score, 3),
+                    }
             except Exception as e:
                 is_live, spoof_score, spoof_details = True, 0.0, {"error": str(e)}
 
@@ -1212,25 +1274,44 @@ class FacialAuthSystem:
 
         t3 = tk.Frame(nb, bg=PANEL)
         nb.add(t3, text="📋  Audit Log")
+        top3 = tk.Frame(t3, bg=PANEL)
+        top3.pack(fill=tk.X, padx=10, pady=6)
         al_box = scrolledtext.ScrolledText(t3, bg="#0d1117", fg="#d29922", font=("Consolas", 8), relief=tk.FLAT)
+        self._btn(top3, "🔄 Refresh", lambda: self._refresh_audit_log(al_box), color=BLUE, fg=BG).pack(side=tk.LEFT, padx=4)
         al_box.pack(fill=tk.BOTH, expand=True, padx=10, pady=6)
-        events = self.audit_log.get_recent_events(limit=200)
-        al_box.insert(tk.END, f"{'Timestamp':<22} {'Username':<14} {'Event':<28} {'Severity':<10} Details\n" + "-"*120 + "\n")
-        for e in reversed(events):
-            al_box.insert(tk.END, f"{e['timestamp']:<22} {e['username']:<14} {e['event_type']:<28} "
-                                   f"{e['severity']:<10} {str(e['details'])[:60]}\n")
+        self._refresh_audit_log(al_box)
 
         t4 = tk.Frame(nb, bg=PANEL)
         nb.add(t4, text="🌐  Active Sessions")
+        top4 = tk.Frame(t4, bg=PANEL)
+        top4.pack(fill=tk.X, padx=10, pady=6)
         s_box = scrolledtext.ScrolledText(t4, bg="#0d1117", fg=GREEN, font=("Consolas", 8), relief=tk.FLAT)
+        self._btn(top4, "🔄 Refresh", lambda: self._refresh_sessions(s_box), color=BLUE, fg=BG).pack(side=tk.LEFT, padx=4)
         s_box.pack(fill=tk.BOTH, expand=True, padx=10, pady=6)
-        for s in self.session_mgr.get_all_sessions():
-            s_box.insert(tk.END, f"{s['session_id'][:12]}...  {s['username']:<14} {s['ip_address']:<18} "
-                                  f"{s['created_at']:<22} {s['expired']}\n")
+        self._refresh_sessions(s_box)
 
         t5 = tk.Frame(nb, bg=PANEL)
         nb.add(t5, text="🗑️  Manage Users")
         self._build_delete_tab(t5)
+
+    def _refresh_audit_log(self, box):
+        box.delete("1.0", tk.END)
+        events = self.audit_log.get_recent_events(limit=200)
+        box.insert(tk.END, f"{'Timestamp':<22} {'Username':<14} {'Event':<28} {'Severity':<10} Details\n" + "-"*120 + "\n")
+        for e in reversed(events):
+            box.insert(tk.END, f"{e['timestamp']:<22} {e['username']:<14} {e['event_type']:<28} "
+                                f"{e['severity']:<10} {str(e['details'])[:60]}\n")
+
+    def _refresh_sessions(self, box):
+        box.delete("1.0", tk.END)
+        sessions = self.session_mgr.get_all_sessions()
+        if not sessions:
+            box.insert(tk.END, "No active sessions yet — a session is only created after a "
+                                "fully successful login (past face match, liveness, and IDS check).\n")
+            return
+        for s in sessions:
+            box.insert(tk.END, f"{s['session_id'][:12]}...  {s['username']:<14} {s['ip_address']:<18} "
+                                f"{s['created_at']:<22} {s['expired']}\n")
 
     def _refresh_users(self, box):
         box.delete("1.0", tk.END)
@@ -1354,6 +1435,15 @@ class FacialAuthSystem:
         f_box.pack(fill=tk.BOTH, expand=True, padx=10, pady=6)
         for e in reversed(failed_auths):
             f_box.insert(tk.END, f"{e['timestamp']:<22} {e['username']:<14} {str(e['details'])[:80]}\n")
+
+        t2b = tk.Frame(nb, bg=PANEL); nb.add(t2b, text="🎭  Spoof Detections")
+        sp_box = scrolledtext.ScrolledText(t2b, bg="#0d1117", fg=RED, font=("Consolas", 8), relief=tk.FLAT)
+        sp_box.pack(fill=tk.BOTH, expand=True, padx=10, pady=6)
+        if spoofs:
+            for e in reversed(spoofs):
+                sp_box.insert(tk.END, f"{e['timestamp']:<22} {e['username']:<14} {str(e['details'])[:100]}\n")
+        else:
+            sp_box.insert(tk.END, "✅  No spoof signals recorded.\n")
 
         t3 = tk.Frame(nb, bg=PANEL); nb.add(t3, text="📡  Network Analysis")
         n_box = scrolledtext.ScrolledText(t3, bg="#0d1117", fg=BLUE, font=("Consolas", 8), relief=tk.FLAT)

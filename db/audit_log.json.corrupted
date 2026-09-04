@@ -1,12 +1,773 @@
 [
     {
-        "timestamp": "2026-08-10T02:04:44.507880",
+        "timestamp": "2026-08-28T10:36:37.071500",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "Chery",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:36:44.773074",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "eji",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:36:51.807083",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "monica",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:37:29.553567",
+        "username": "eji",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.218.114",
+            "confidence": 0.8769551515579224
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:37:29.558542",
+        "username": "eji",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.877,
+            "ids_status": "LOW",
+            "session_id": "11fc6ab6"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:37:39.717923",
+        "username": "eji",
+        "event_type": "LOGOUT",
+        "details": {
+            "session": "11fc6ab6"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:38:28.867623",
+        "username": "eji",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:38:38.673581",
+        "username": "eji",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:38:44.654734",
+        "username": "eji",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:38:51.293070",
+        "username": "eji",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:38:56.827244",
+        "username": "eji",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:39:26.092698",
         "username": "monica",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.218.114",
+            "confidence": 0.8073027729988098
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:39:26.095866",
+        "username": "monica",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.8073,
+            "ids_status": "LOW",
+            "session_id": "ec5827fb"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:39:31.161695",
+        "username": "monica",
+        "event_type": "LOGOUT",
+        "details": {
+            "session": "ec5827fb"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:40:01.957334",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:40:07.693943",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:40:15.202681",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:40:54.452641",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:41:01.468930",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:41:01.529622",
+        "username": "Chery",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:42:55.676488",
+        "username": "monica",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:43:14.166167",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "Chery",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:43:18.819420",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "eji",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:43:20.354910",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "eji",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:43:26.012750",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "monica",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:44:12.319001",
+        "username": "eji",
+        "event_type": "IDS_ALERT",
+        "details": {
+            "alert_level": "MEDIUM",
+            "reason": "IF anomaly (score:-0.00)"
+        },
+        "severity": "CRITICAL"
+    },
+    {
+        "timestamp": "2026-08-28T10:44:12.321401",
+        "username": "eji",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "IDS blocked login: IF anomaly (score:-0.00)",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:45:44.004102",
+        "username": "monica",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.218.114",
+            "confidence": 0.8150935173034668
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:45:44.010886",
+        "username": "monica",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.8151,
+            "ids_status": "LOW",
+            "session_id": "cb5063d4"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:45:49.363767",
+        "username": "monica",
+        "event_type": "LOGOUT",
+        "details": {
+            "session": "cb5063d4"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:46:25.868521",
+        "username": "Chery",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.218.114",
+            "confidence": 0.8358081579208374
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:46:25.875550",
+        "username": "Chery",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.8358,
+            "ids_status": "LOW",
+            "session_id": "b3c64134"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:46:32.320399",
+        "username": "Chery",
+        "event_type": "LOGOUT",
+        "details": {
+            "session": "b3c64134"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:47:03.961561",
+        "username": "eji",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:47:47.087214",
+        "username": "monica",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:48:12.430135",
+        "username": "monica",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:50:04.191943",
+        "username": "israelonyedika",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.218.114",
+            "confidence": 0.7381998896598816
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:50:04.199541",
+        "username": "israelonyedika",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.7382,
+            "ids_status": "LOW",
+            "session_id": "6fbd8dad"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:50:09.913922",
+        "username": "israelonyedika",
+        "event_type": "LOGOUT",
+        "details": {
+            "session": "6fbd8dad"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:50:57.009648",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:51:12.995382",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:51:18.493888",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:51:40.965354",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:51:41.026475",
+        "username": "Chery",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:52:39.998719",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "Chery",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T10:53:28.818790",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:53:39.572398",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:53:51.601794",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:53:55.055670",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:54:17.255428",
+        "username": "Chery",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:54:17.321574",
+        "username": "Chery",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:54:28.543874",
+        "username": "Israelonyedika",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Username not found",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:55:00.537921",
+        "username": "israelonyedika",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:55:10.488313",
+        "username": "israelonyedika",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:56:08.801705",
+        "username": "israelonyedika",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:58:46.021445",
+        "username": "israelonyedika",
+        "event_type": "LIVENESS_IDENTITY_MISMATCH",
+        "details": {
+            "note": "Blink confirmed from a face that did not match the enrolled identity"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T10:58:46.071013",
+        "username": "israelonyedika",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T11:58:42.076648",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "eji",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T11:59:34.767652",
+        "username": "eji",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "Liveness check failed after 6 attempts",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T11:59:58.605073",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "eji",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:00:04.444213",
+        "username": "admin",
+        "event_type": "ADMIN_ACTION",
+        "details": {
+            "action": "UNLOCK_ACCOUNT",
+            "target_user": "monica",
+            "additional_details": "Unlocked by admin"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:00:34.285913",
+        "username": "monica",
+        "event_type": "IDS_ALERT",
+        "details": {
+            "alert_level": "MEDIUM",
+            "reason": "IF anomaly (score:-0.00)"
+        },
+        "severity": "CRITICAL"
+    },
+    {
+        "timestamp": "2026-08-28T12:00:34.291561",
+        "username": "monica",
+        "event_type": "FAILED_AUTH",
+        "details": {
+            "reason": "IDS blocked login: IF anomaly (score:-0.00)",
+            "ip_address": "192.168.218.114"
+        },
+        "severity": "WARNING"
+    },
+    {
+        "timestamp": "2026-08-28T12:01:24.758874",
+        "username": "monica",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.218.114",
+            "confidence": 0.7311931848526001
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:01:24.764205",
+        "username": "monica",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.7312,
+            "ids_status": "LOW",
+            "session_id": "d5f77db6"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:08:48.300455",
+        "username": "eji",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.218.114",
+            "confidence": 0.7662491202354431
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:08:48.305773",
+        "username": "eji",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.7662,
+            "ids_status": "LOW",
+            "session_id": "c63c330b"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:09:09.358935",
+        "username": "eji",
+        "event_type": "LOGOUT",
+        "details": {
+            "session": "c63c330b"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:09:26.620370",
+        "username": "eji",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.218.114",
+            "confidence": 0.7659085392951965
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:09:26.625130",
+        "username": "eji",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.7659,
+            "ids_status": "LOW",
+            "session_id": "72d2f3bb"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:09:33.725974",
+        "username": "eji",
+        "event_type": "LOGOUT",
+        "details": {
+            "session": "72d2f3bb"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:09:50.351659",
+        "username": "eji",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.218.114",
+            "confidence": 0.7713968753814697
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T12:09:50.359405",
+        "username": "eji",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.7714,
+            "ids_status": "LOW",
+            "session_id": "f70d0cfd"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-28T16:46:54.489075",
+        "username": "eji",
+        "event_type": "LOGOUT",
+        "details": {
+            "session": "f70d0cfd"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-31T10:46:05.915588",
+        "username": "monica",
+        "event_type": "LOGIN",
+        "details": {
+            "success": true,
+            "ip_address": "192.168.98.115",
+            "confidence": 0.7710456252098083
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-31T10:46:05.920479",
+        "username": "monica",
+        "event_type": "AUTHENTICATION_SUCCESS",
+        "details": {
+            "face_confidence": 0.771,
+            "ids_status": "LOW",
+            "session_id": "d0946581"
+        },
+        "severity": "INFO"
+    },
+    {
+        "timestamp": "2026-08-31T11:18:30.157479",
+        "username": "eji",
         "event_type": "SPOOF_SIGNAL_DETECTED",
         "details": {
             "spoof_score": 0.7,
-            "sharpness_score": 1.0,
-            "laplacian_variance": 141.1,
-            "moire_score": 0.301,
-            "moire_strength": 0.699,
+            "sharpness_score": 0.439,
+            "laplacian_variance": 52.7,
+            "moire_score": 0.333,
+            "moire_strength": 0.667,
             "moire_flagged": 

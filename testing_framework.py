@@ -46,11 +46,12 @@ class TestMetrics:
         else:
             self.tests_failed += 1
         
+        # FIX #1: Convert passed to native Python bool for JSON serialization
         self.detailed_results.append({
             'test': test_name,
             'timestamp': datetime.now().isoformat(),
-            'passed': passed,
-            'details': details
+            'passed': bool(passed),  # Convert numpy bool to Python bool
+            'details': str(details)  # Ensure details is string
         })
         
         status = "✅ PASS" if passed else "❌ FAIL"
@@ -62,16 +63,16 @@ class TestMetrics:
         pass_rate = (self.tests_passed / total) * 100
         
         return {
-            'total_tests': self.tests_run,
-            'passed': self.tests_passed,
-            'failed': self.tests_failed,
+            'total_tests': int(self.tests_run),
+            'passed': int(self.tests_passed),
+            'failed': int(self.tests_failed),
             'pass_rate': f"{pass_rate:.2f}%",
             'avg_face_detection': f"{np.mean(self.face_detection_accuracy):.2f}" if self.face_detection_accuracy else "N/A",
             'avg_face_matching': f"{np.mean(self.face_matching_accuracy):.2f}" if self.face_matching_accuracy else "N/A",
             'avg_liveness': f"{np.mean(self.liveness_detection_accuracy):.2f}" if self.liveness_detection_accuracy else "N/A",
             'avg_ids_accuracy': f"{np.mean(self.ids_accuracy):.2f}" if self.ids_accuracy else "N/A",
             'avg_response_time_ms': f"{np.mean(self.response_times):.2f}" if self.response_times else "N/A",
-            'security_incidents': len(self.security_incidents)
+            'security_incidents': int(len(self.security_incidents))
         }
 
 class Phase5Tester:
@@ -121,7 +122,8 @@ class Phase5Tester:
                 ret, frame = cap.read()
                 if ret:
                     frames_captured += 1
-                    faces = self.face_detector.detect(frame)
+                    # FIX #2: Use detect_sync() instead of detect() for accurate single-frame detection
+                    faces = self.face_detector.detect_sync(frame)
                     if len(faces) > 0:
                         faces_detected += 1
                     print(f"  Frame {i+1}: {len(faces)} face(s) detected")
@@ -171,7 +173,8 @@ class Phase5Tester:
                 for i in range(5):
                     ret, frame = cap.read()
                     if ret:
-                        faces = self.face_detector.detect(frame)
+                        # FIX #2: Use detect_sync() for accurate enrollment
+                        faces = self.face_detector.detect_sync(frame)
                         if len(faces) == 1:
                             frames.append(frame)
                             print(f"  Frame {i+1}: Face captured")
@@ -209,7 +212,7 @@ class Phase5Tester:
                                     similarity = np.dot(current_emb, enrolled_emb) / (
                                         np.linalg.norm(current_emb) * np.linalg.norm(enrolled_emb) + 1e-6
                                     )
-                                    similarities.append(similarity)
+                                    similarities.append(float(similarity))
                                     print(f"  Frame {i+1}: Similarity = {similarity:.4f}")
                                     
                                     if similarity >= 0.5:
@@ -245,7 +248,7 @@ class Phase5Tester:
         print("-"*80)
         
         try:
-            print("Testing liveness detection (capture 10 frames)...")
+            print("Testing liveness detection (capture 30 frames)...")
             cap = cv2.VideoCapture(1)
             cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
             cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
@@ -263,7 +266,7 @@ class Phase5Tester:
                 ret, frame = cap.read()
                 if ret:
                     is_live, blinks, ear = self.liveness_detector.detect(frame)
-                    ear_values.append(ear)
+                    ear_values.append(float(ear))
                     print(f"  Frame {i+1}: Blinks={blinks}, EAR={ear:.4f}")
                     
                     if blinks > 0:
@@ -314,8 +317,8 @@ class Phase5Tester:
             session_id = self.session_manager.create_session(test_user, "127.0.0.1", "test_device")
             self.metrics.add_test("Session Creation", len(session_id) > 0, f"Session: {session_id[:8]}...")
             
-            # Validate session
-            valid = self.session_manager.validate_session(session_id)
+            # FIX #3: Validate session requires ip_address argument
+            valid = self.session_manager.validate_session(session_id, "127.0.0.1")
             self.metrics.add_test("Session Validation", valid, f"Session valid: {valid}")
             
             # End session
@@ -388,11 +391,12 @@ class Phase5Tester:
             test_user = "lockout_test"
             self.auth_system.create_account(test_user, "lock@test.com", "Lock Test", "Testing", "0000000000")
             
-            acc = self.account_manager.get_account(test_user)
+            # FIX #4: Use accounts dict directly instead of non-existent get_account()
             for _ in range(5):
-                self.account_manager.record_failed_attempt(test_user)
+                if test_user in self.account_manager.accounts:
+                    self.account_manager.record_failed_attempt(test_user)
             
-            acc = self.account_manager.get_account(test_user)
+            acc = self.account_manager.accounts.get(test_user, {})
             locked = acc.get('is_locked', False)
             self.metrics.add_test("Account Lockout", locked, f"Account locked: {locked}")
             
@@ -439,14 +443,14 @@ class Phase5Tester:
                 ret, frame = cap.read()
                 if ret:
                     start = time.time()
-                    self.face_detector.detect(frame)
+                    self.face_detector.detect_sync(frame)  # FIX #2: Use detect_sync
                     elapsed = (time.time() - start) * 1000
                     times.append(elapsed)
             
             cap.release()
             
             avg_time = np.mean(times) if times else 0
-            self.metrics.response_times.append(avg_time)
+            self.metrics.response_times.append(float(avg_time))
             self.metrics.add_test(
                 "Face Detection Speed",
                 avg_time < 100,
@@ -534,6 +538,7 @@ class Phase5Tester:
         # Save detailed results
         output_file = "phase5_test_results.json"
         with open(output_file, 'w') as f:
+            # FIX #1: Ensure all values are JSON serializable
             json.dump({
                 'summary': summary,
                 'detailed_results': self.metrics.detailed_results,

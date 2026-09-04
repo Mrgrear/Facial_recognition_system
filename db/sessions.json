@@ -33,7 +33,7 @@
         "device_id": "145862429323149",
         "created_at": "2026-07-22T07:58:20.086077",
         "last_activity": "2026-07-22T07:58:20.086094",
-        "expired": false
+        "expired": true
     },
     "7d5c5b0a-79ce-452c-b09e-ed9c00676a40": {
         "session_id": "7d5c5b0a-79ce-452c-b09e-ed9c00676a40",
@@ -186,7 +186,7 @@
         "device_id": "test_device",
         "created_at": "2026-08-06T18:33:40.930080",
         "last_activity": "2026-08-06T18:33:40.930095",
-        "expired": false
+        "expired": true
     },
     "098fde00-f184-452b-b8e5-64f0ac07b34b": {
         "session_id": "098fde00-f184-452b-b8e5-64f0ac07b34b",
@@ -250,5 +250,563 @@
         "created_at": "2026-08-10T02:08:50.633336",
         "last_activity": "2026-08-10T02:08:50.633354",
         "expired": true
+    },
+    "06e2e174-f249-433a-a38e-377583e5145f": {
+        "session_id": "06e2e174-f249-433a-a38e-377583e5145f",
+        "username": "auth_flow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-20T08:40:18.587764",
+        "last_activity": "2026-08-20T08:40:18.587785",
+        "expired": true
+    },
+    "1cc3d501-8333-4b26-b5b9-ee7832e9d065": {
+        "session_id": "1cc3d501-8333-4b26-b5b9-ee7832e9d065",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-20T08:40:25.731336",
+        "last_activity": "2026-08-20T08:40:25.731370",
+        "expired": true
+    },
+    "31bd5c34-d228-4cc4-beeb-17dc9c0f4172": {
+        "session_id": "31bd5c34-d228-4cc4-beeb-17dc9c0f4172",
+        "username": "eji",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-20T10:14:36.050855",
+        "last_activity": "2026-08-20T10:14:36.050868",
+        "expired": true
+    },
+    "f480fcca-fb7b-4447-a009-0c7dffa66d0e": {
+        "session_id": "f480fcca-fb7b-4447-a009-0c7dffa66d0e",
+        "username": "auth_flow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-20T10:32:22.816178",
+        "last_activity": "2026-08-20T10:32:22.816195",
+        "expired": true
+    },
+    "0297e69b-5456-4dd0-b47e-006b2c7c21eb": {
+        "session_id": "0297e69b-5456-4dd0-b47e-006b2c7c21eb",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-20T10:32:24.983893",
+        "last_activity": "2026-08-20T10:32:24.983904",
+        "expired": true
+    },
+    "f81e2d27-004b-4ed9-8246-40323f11521d": {
+        "session_id": "f81e2d27-004b-4ed9-8246-40323f11521d",
+        "username": "auth_flow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-20T11:00:47.092153",
+        "last_activity": "2026-08-20T11:00:47.094594",
+        "expired": true
+    },
+    "21d5d277-600f-4ee3-9bc2-f9b5e548b88c": {
+        "session_id": "21d5d277-600f-4ee3-9bc2-f9b5e548b88c",
+        "username": "lockout_test",
+        "ip_address": "192.168.1.1",
+        "device_id": "device1",
+        "created_at": "2026-08-20T11:00:47.336801",
+        "last_activity": "2026-08-20T11:00:47.336812",
+        "expired": true
+    },
+    "99eb309e-5036-4e58-9fe5-7bff97944596": {
+        "session_id": "99eb309e-5036-4e58-9fe5-7bff97944596",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-20T11:00:49.346828",
+        "last_activity": "2026-08-20T11:00:49.346842",
+        "expired": true
+    },
+    "b160703f-ad85-4baf-a6f7-1d4f730c4de7": {
+        "session_id": "b160703f-ad85-4baf-a6f7-1d4f730c4de7",
+        "username": "eji",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-20T16:53:30.125632",
+        "last_activity": "2026-08-20T16:53:30.125660",
+        "expired": true
+    },
+    "0f2332ec-4ae1-4611-af80-e68f4468c356": {
+        "session_id": "0f2332ec-4ae1-4611-af80-e68f4468c356",
+        "username": "monica",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-20T16:55:10.282495",
+        "last_activity": "2026-08-20T16:55:10.282511",
+        "expired": true
+    },
+    "8f346bcd-87d2-4337-9c3b-feebfa1d41a5": {
+        "session_id": "8f346bcd-87d2-4337-9c3b-feebfa1d41a5",
+        "username": "eji",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-20T16:58:03.047779",
+        "last_activity": "2026-08-20T16:58:03.047803",
+        "expired": true
+    },
+    "199f18ff-7f20-45ca-8457-77053db456c4": {
+        "session_id": "199f18ff-7f20-45ca-8457-77053db456c4",
+        "username": "auth_flow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-20T17:08:54.510690",
+        "last_activity": "2026-08-20T17:08:54.513945",
+        "expired": true
+    },
+    "ce93c50c-2a51-48a0-9825-dc3d09b3892b": {
+        "session_id": "ce93c50c-2a51-48a0-9825-dc3d09b3892b",
+        "username": "lockout_test",
+        "ip_address": "192.168.1.1",
+        "device_id": "device1",
+        "created_at": "2026-08-20T17:08:54.686532",
+        "last_activity": "2026-08-20T17:08:54.686545",
+        "expired": true
+    },
+    "1d825f98-be29-467f-8150-91c2442c8dc9": {
+        "session_id": "1d825f98-be29-467f-8150-91c2442c8dc9",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-20T17:09:02.041010",
+        "last_activity": "2026-08-20T17:09:02.041023",
+        "expired": true
+    },
+    "c21fbe0f-4134-4548-a3de-a4a2a9f0cf86": {
+        "session_id": "c21fbe0f-4134-4548-a3de-a4a2a9f0cf86",
+        "username": "auth_flow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-20T17:18:32.847478",
+        "last_activity": "2026-08-20T17:18:32.855502",
+        "expired": true
+    },
+    "bf49ec10-ce26-4a77-a8d7-387ffab8796f": {
+        "session_id": "bf49ec10-ce26-4a77-a8d7-387ffab8796f",
+        "username": "lockout_test",
+        "ip_address": "192.168.1.1",
+        "device_id": "device1",
+        "created_at": "2026-08-20T17:18:33.157417",
+        "last_activity": "2026-08-20T17:18:33.157442",
+        "expired": true
+    },
+    "a64dafc8-6e88-4340-afa8-8b21e26a905d": {
+        "session_id": "a64dafc8-6e88-4340-afa8-8b21e26a905d",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-20T17:18:40.362480",
+        "last_activity": "2026-08-20T17:18:40.362505",
+        "expired": true
+    },
+    "e3b0faea-bd75-47e9-8a4d-454c9e64ba4d": {
+        "session_id": "e3b0faea-bd75-47e9-8a4d-454c9e64ba4d",
+        "username": "eji",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-20T17:20:35.142372",
+        "last_activity": "2026-08-20T17:20:35.142399",
+        "expired": true
+    },
+    "dbbdbfea-0bca-46a2-b8f7-9d84e7464d1b": {
+        "session_id": "dbbdbfea-0bca-46a2-b8f7-9d84e7464d1b",
+        "username": "auth_flow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-20T17:22:34.662925",
+        "last_activity": "2026-08-20T17:22:34.671239",
+        "expired": true
+    },
+    "bd365eb1-267a-4a22-9b96-d45b4f8e4b7e": {
+        "session_id": "bd365eb1-267a-4a22-9b96-d45b4f8e4b7e",
+        "username": "lockout_test",
+        "ip_address": "192.168.1.1",
+        "device_id": "device1",
+        "created_at": "2026-08-20T17:22:34.996076",
+        "last_activity": "2026-08-20T17:22:34.996094",
+        "expired": true
+    },
+    "0be34711-3f34-4480-9864-3787122e4ae7": {
+        "session_id": "0be34711-3f34-4480-9864-3787122e4ae7",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-20T17:22:42.220825",
+        "last_activity": "2026-08-20T17:22:42.220841",
+        "expired": true
+    },
+    "1a109985-11c7-4c66-a211-4616cdb05e77": {
+        "session_id": "1a109985-11c7-4c66-a211-4616cdb05e77",
+        "username": "eji",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-21T06:23:10.723877",
+        "last_activity": "2026-08-21T06:23:10.723896",
+        "expired": true
+    },
+    "283cddda-3aab-4985-9185-dbfb633db857": {
+        "session_id": "283cddda-3aab-4985-9185-dbfb633db857",
+        "username": "dgreat",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-21T06:25:35.929741",
+        "last_activity": "2026-08-21T06:25:35.929767",
+        "expired": true
+    },
+    "3238e282-cdc7-487c-a7c4-6d755355e802": {
+        "session_id": "3238e282-cdc7-487c-a7c4-6d755355e802",
+        "username": "israelonyedika",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-21T06:29:50.640429",
+        "last_activity": "2026-08-21T06:29:50.640471",
+        "expired": true
+    },
+    "7c4cb77f-31f4-401e-ac65-55f09e3b1287": {
+        "session_id": "7c4cb77f-31f4-401e-ac65-55f09e3b1287",
+        "username": "auth_flow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-21T06:32:35.253386",
+        "last_activity": "2026-08-21T06:32:35.261584",
+        "expired": true
+    },
+    "298bbadb-d0e4-4ef8-a309-e56357b0c97d": {
+        "session_id": "298bbadb-d0e4-4ef8-a309-e56357b0c97d",
+        "username": "lockout_test",
+        "ip_address": "192.168.1.1",
+        "device_id": "device1",
+        "created_at": "2026-08-21T06:32:35.437435",
+        "last_activity": "2026-08-21T06:32:35.437446",
+        "expired": true
+    },
+    "244e713b-5051-4196-a7eb-134c4bab7c34": {
+        "session_id": "244e713b-5051-4196-a7eb-134c4bab7c34",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-21T06:32:42.876010",
+        "last_activity": "2026-08-21T06:32:42.876018",
+        "expired": true
+    },
+    "7f94ec19-f5d4-4347-911f-3440f9f06b90": {
+        "session_id": "7f94ec19-f5d4-4347-911f-3440f9f06b90",
+        "username": "auth_flow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-21T10:29:13.206681",
+        "last_activity": "2026-08-21T10:29:13.219993",
+        "expired": true
+    },
+    "5e958e4d-2e00-45be-a685-a3c4be696d55": {
+        "session_id": "5e958e4d-2e00-45be-a685-a3c4be696d55",
+        "username": "lockout_test",
+        "ip_address": "192.168.1.1",
+        "device_id": "device1",
+        "created_at": "2026-08-21T10:29:13.737518",
+        "last_activity": "2026-08-21T10:29:13.737526",
+        "expired": true
+    },
+    "ac84bfba-3a53-4d55-a4b7-9c8f1be5adab": {
+        "session_id": "ac84bfba-3a53-4d55-a4b7-9c8f1be5adab",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-21T10:29:21.002173",
+        "last_activity": "2026-08-21T10:29:21.002198",
+        "expired": true
+    },
+    "ee617012-2d68-4a78-aaa0-6c2ebb7edb97": {
+        "session_id": "ee617012-2d68-4a78-aaa0-6c2ebb7edb97",
+        "username": "monica",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-21T13:22:30.315734",
+        "last_activity": "2026-08-21T13:22:30.315745",
+        "expired": true
+    },
+    "952c0590-2a94-478b-bce6-bb6b77dbc353": {
+        "session_id": "952c0590-2a94-478b-bce6-bb6b77dbc353",
+        "username": "phase5_test_user",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-21T13:24:03.853738",
+        "last_activity": "2026-08-21T13:24:03.859523",
+        "expired": true
+    },
+    "eee0145f-8cd0-4ac3-a203-82d43d108478": {
+        "session_id": "eee0145f-8cd0-4ac3-a203-82d43d108478",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-21T13:24:04.417754",
+        "last_activity": "2026-08-21T13:24:04.417763",
+        "expired": true
+    },
+    "746cfe5b-fd0e-4c63-8d37-f87a1bf75d87": {
+        "session_id": "746cfe5b-fd0e-4c63-8d37-f87a1bf75d87",
+        "username": "monica",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-21T13:29:07.231560",
+        "last_activity": "2026-08-21T13:29:07.231579",
+        "expired": true
+    },
+    "f3d550df-3e09-4d77-92de-e5e2d46e4c37": {
+        "session_id": "f3d550df-3e09-4d77-92de-e5e2d46e4c37",
+        "username": "auth_flow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-21T13:36:22.320574",
+        "last_activity": "2026-08-21T13:36:22.322738",
+        "expired": true
+    },
+    "1368577c-84d9-4dcf-9d51-4e1226752380": {
+        "session_id": "1368577c-84d9-4dcf-9d51-4e1226752380",
+        "username": "lockout_test",
+        "ip_address": "192.168.1.1",
+        "device_id": "device1",
+        "created_at": "2026-08-21T13:36:22.878052",
+        "last_activity": "2026-08-21T13:36:22.878076",
+        "expired": false
+    },
+    "095d2419-0b82-4cad-b437-bff8bbba7afb": {
+        "session_id": "095d2419-0b82-4cad-b437-bff8bbba7afb",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-21T13:36:28.790588",
+        "last_activity": "2026-08-21T13:36:28.790599",
+        "expired": true
+    },
+    "4d3d2ac3-4ad8-4085-9f0b-7662a6aedbb7": {
+        "session_id": "4d3d2ac3-4ad8-4085-9f0b-7662a6aedbb7",
+        "username": "phase5_test_user",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-21T19:52:00.293822",
+        "last_activity": "2026-08-21T19:52:00.300533",
+        "expired": true
+    },
+    "7b712a34-7383-4515-a782-8f73d7ecf0c7": {
+        "session_id": "7b712a34-7383-4515-a782-8f73d7ecf0c7",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-21T19:52:00.760655",
+        "last_activity": "2026-08-21T19:52:00.760666",
+        "expired": true
+    },
+    "82ca819c-2684-4e2f-9805-fb19b0a2a4e0": {
+        "session_id": "82ca819c-2684-4e2f-9805-fb19b0a2a4e0",
+        "username": "phase5_test_user",
+        "ip_address": "127.0.0.1",
+        "device_id": "test_device",
+        "created_at": "2026-08-21T19:58:05.346693",
+        "last_activity": "2026-08-21T19:58:05.353595",
+        "expired": true
+    },
+    "589a5a64-dfb8-409d-bc1c-24b241bcd1d9": {
+        "session_id": "589a5a64-dfb8-409d-bc1c-24b241bcd1d9",
+        "username": "workflow_test",
+        "ip_address": "127.0.0.1",
+        "device_id": "device",
+        "created_at": "2026-08-21T19:58:05.776395",
+        "last_activity": "2026-08-21T19:58:05.776406",
+        "expired": true
+    },
+    "ebecaeda-e0e0-417e-b430-49c73102488c": {
+        "session_id": "ebecaeda-e0e0-417e-b430-49c73102488c",
+        "username": "eji",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-21T20:28:55.803235",
+        "last_activity": "2026-08-21T20:28:55.803249",
+        "expired": true
+    },
+    "c6e36d4c-effd-4928-913b-ce1a22085b0d": {
+        "session_id": "c6e36d4c-effd-4928-913b-ce1a22085b0d",
+        "username": "Chery",
+        "ip_address": "192.168.38.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-21T20:30:28.834082",
+        "last_activity": "2026-08-21T20:30:28.834108",
+        "expired": true
+    },
+    "83de43eb-79db-4869-8e45-2ba7bf0620a8": {
+        "session_id": "83de43eb-79db-4869-8e45-2ba7bf0620a8",
+        "username": "eji",
+        "ip_address": "192.168.46.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-24T05:29:29.943968",
+        "last_activity": "2026-08-24T05:29:29.943984",
+        "expired": true
+    },
+    "1f0b560b-872d-4da7-992d-079318a9023c": {
+        "session_id": "1f0b560b-872d-4da7-992d-079318a9023c",
+        "username": "monica",
+        "ip_address": "192.168.46.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-24T05:31:55.719378",
+        "last_activity": "2026-08-24T05:31:55.719405",
+        "expired": true
+    },
+    "ecd6c50b-8f03-4463-82f2-8ce55f2521be": {
+        "session_id": "ecd6c50b-8f03-4463-82f2-8ce55f2521be",
+        "username": "Chery",
+        "ip_address": "192.168.46.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-24T05:33:31.007387",
+        "last_activity": "2026-08-24T05:33:31.007412",
+        "expired": true
+    },
+    "946b8364-fa65-4b0a-859b-6317bf4ef1b7": {
+        "session_id": "946b8364-fa65-4b0a-859b-6317bf4ef1b7",
+        "username": "eji",
+        "ip_address": "127.0.0.1",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-27T10:33:54.068310",
+        "last_activity": "2026-08-27T10:33:54.068322",
+        "expired": true
+    },
+    "76843aca-1842-413b-91a1-205519c0f924": {
+        "session_id": "76843aca-1842-413b-91a1-205519c0f924",
+        "username": "eji",
+        "ip_address": "127.0.0.1",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-27T10:34:44.545515",
+        "last_activity": "2026-08-27T10:34:44.545533",
+        "expired": true
+    },
+    "73c2ba8f-7da9-4f5d-9996-86ff0be4395f": {
+        "session_id": "73c2ba8f-7da9-4f5d-9996-86ff0be4395f",
+        "username": "eji",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T06:29:16.053770",
+        "last_activity": "2026-08-28T06:29:16.053785",
+        "expired": true
+    },
+    "d90eaf1d-5f80-41a8-99f7-196ea49aa1be": {
+        "session_id": "d90eaf1d-5f80-41a8-99f7-196ea49aa1be",
+        "username": "monica",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T10:25:54.617018",
+        "last_activity": "2026-08-28T10:25:54.617037",
+        "expired": true
+    },
+    "11fc6ab6-713a-4208-bb46-cdb12abb8dd8": {
+        "session_id": "11fc6ab6-713a-4208-bb46-cdb12abb8dd8",
+        "username": "eji",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T10:37:29.541685",
+        "last_activity": "2026-08-28T10:37:29.541711",
+        "expired": true
+    },
+    "ec5827fb-8a35-4465-a87b-1a041e31d0a5": {
+        "session_id": "ec5827fb-8a35-4465-a87b-1a041e31d0a5",
+        "username": "monica",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T10:39:26.082391",
+        "last_activity": "2026-08-28T10:39:26.082415",
+        "expired": true
+    },
+    "cb5063d4-9a07-4612-8ffe-4571e9665f28": {
+        "session_id": "cb5063d4-9a07-4612-8ffe-4571e9665f28",
+        "username": "monica",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T10:45:43.990555",
+        "last_activity": "2026-08-28T10:45:43.990579",
+        "expired": true
+    },
+    "b3c64134-098f-4238-9756-b6f8be4e8d56": {
+        "session_id": "b3c64134-098f-4238-9756-b6f8be4e8d56",
+        "username": "Chery",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T10:46:25.856159",
+        "last_activity": "2026-08-28T10:46:25.856183",
+        "expired": true
+    },
+    "6fbd8dad-7f82-4053-b06c-f32d1fdae907": {
+        "session_id": "6fbd8dad-7f82-4053-b06c-f32d1fdae907",
+        "username": "israelonyedika",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T10:50:04.179185",
+        "last_activity": "2026-08-28T10:50:04.179212",
+        "expired": true
+    },
+    "d5f77db6-372c-46b6-b31b-63e7ba1a25d7": {
+        "session_id": "d5f77db6-372c-46b6-b31b-63e7ba1a25d7",
+        "username": "monica",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T12:01:24.752637",
+        "last_activity": "2026-08-28T12:01:24.752652",
+        "expired": true
+    },
+    "c63c330b-c30e-43a2-9430-c689349242c7": {
+        "session_id": "c63c330b-c30e-43a2-9430-c689349242c7",
+        "username": "eji",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T12:08:48.296140",
+        "last_activity": "2026-08-28T12:08:48.296151",
+        "expired": true
+    },
+    "72d2f3bb-46e9-4ad4-9128-dc3b045234ed": {
+        "session_id": "72d2f3bb-46e9-4ad4-9128-dc3b045234ed",
+        "username": "eji",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T12:09:26.614602",
+        "last_activity": "2026-08-28T12:09:26.614613",
+        "expired": true
+    },
+    "f70d0cfd-59da-4f76-b9a0-286e6a9ba83f": {
+        "session_id": "f70d0cfd-59da-4f76-b9a0-286e6a9ba83f",
+        "username": "eji",
+        "ip_address": "192.168.218.114",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-28T12:09:50.343314",
+        "last_activity": "2026-08-28T12:09:50.343333",
+        "expired": true
+    },
+    "d0946581-91d1-4041-91b1-3aa7b168433a": {
+        "session_id": "d0946581-91d1-4041-91b1-3aa7b168433a",
+        "username": "monica",
+        "ip_address": "192.168.98.115",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-31T10:46:05.911071",
+        "last_activity": "2026-08-31T10:46:05.911082",
+        "expired": false
+    },
+    "cd2df2ce-1a55-472e-b5c0-08065d19acad": {
+        "session_id": "cd2df2ce-1a55-472e-b5c0-08065d19acad",
+        "username": "eji",
+        "ip_address": "192.168.98.115",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-31T11:27:32.445649",
+        "last_activity": "2026-08-31T11:27:32.445665",
+        "expired": true
+    },
+    "fb9d263e-7f0e-4984-866f-f75c0d62ec02": {
+        "session_id": "fb9d263e-7f0e-4984-866f-f75c0d62ec02",
+        "username": "Sharon",
+        "ip_address": "192.168.98.115",
+        "device_id": "179556532491640",
+        "created_at": "2026-08-31T11:38:30.254374",
+        "last_activity": "2026-08-31T11:38:30.254395",
+        "expired": false
     }
 }

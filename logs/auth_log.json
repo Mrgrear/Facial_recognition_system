@@ -502,5 +502,887 @@
         "username": "ejim",
         "event": "FAILED_LOGIN",
         "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-20T10:14:36.060563",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-20T11:00:47.283535",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-20T11:00:47.291636",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 2"
+    },
+    {
+        "timestamp": "2026-08-20T11:00:47.298296",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 3"
+    },
+    {
+        "timestamp": "2026-08-20T11:00:47.301345",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "temp: Exceeded 3 consecutive failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T11:00:47.310854",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 4"
+    },
+    {
+        "timestamp": "2026-08-20T11:00:47.315435",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "temp: Exceeded 3 consecutive failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T11:00:47.324636",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 5"
+    },
+    {
+        "timestamp": "2026-08-20T11:00:47.328005",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T11:33:54.774003",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-20T16:53:30.144033",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-20T16:55:10.292152",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-20T16:56:28.666761",
+        "username": "monica",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-20T16:56:28.671102",
+        "username": "monica",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T16:58:03.065239",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-20T16:58:38.951688",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-20T17:08:54.563000",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 6"
+    },
+    {
+        "timestamp": "2026-08-20T17:08:54.575706",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:08:54.592892",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 7"
+    },
+    {
+        "timestamp": "2026-08-20T17:08:54.597618",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:08:54.610976",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 8"
+    },
+    {
+        "timestamp": "2026-08-20T17:08:54.618801",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:08:54.628770",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 9"
+    },
+    {
+        "timestamp": "2026-08-20T17:08:54.635305",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:08:54.661479",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 10"
+    },
+    {
+        "timestamp": "2026-08-20T17:08:54.669555",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:18:32.958758",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 11"
+    },
+    {
+        "timestamp": "2026-08-20T17:18:32.973209",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:18:32.998023",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 12"
+    },
+    {
+        "timestamp": "2026-08-20T17:18:33.009206",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:18:33.041551",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 13"
+    },
+    {
+        "timestamp": "2026-08-20T17:18:33.054960",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:18:33.078918",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 14"
+    },
+    {
+        "timestamp": "2026-08-20T17:18:33.091854",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:18:33.115678",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 15"
+    },
+    {
+        "timestamp": "2026-08-20T17:18:33.127548",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:20:11.872415",
+        "username": "eji",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-20T17:20:35.159182",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-20T17:22:34.775833",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 16"
+    },
+    {
+        "timestamp": "2026-08-20T17:22:34.791444",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:22:34.821404",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 17"
+    },
+    {
+        "timestamp": "2026-08-20T17:22:34.835693",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:22:34.860206",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 18"
+    },
+    {
+        "timestamp": "2026-08-20T17:22:34.872889",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:22:34.910638",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 19"
+    },
+    {
+        "timestamp": "2026-08-20T17:22:34.923343",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-20T17:22:34.948165",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 20"
+    },
+    {
+        "timestamp": "2026-08-20T17:22:34.965655",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T06:23:10.739483",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-21T06:25:03.360980",
+        "username": "dgreat",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-21T06:25:35.951958",
+        "username": "dgreat",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-21T06:29:19.916116",
+        "username": "israelonyedika",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-21T06:29:50.668733",
+        "username": "israelonyedika",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-21T06:32:35.325739",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 21"
+    },
+    {
+        "timestamp": "2026-08-21T06:32:35.334215",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T06:32:35.347026",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 22"
+    },
+    {
+        "timestamp": "2026-08-21T06:32:35.356987",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T06:32:35.371760",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 23"
+    },
+    {
+        "timestamp": "2026-08-21T06:32:35.378325",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T06:32:35.391202",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 24"
+    },
+    {
+        "timestamp": "2026-08-21T06:32:35.398933",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T06:32:35.411022",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 25"
+    },
+    {
+        "timestamp": "2026-08-21T06:32:35.418134",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T10:29:13.641500",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 26"
+    },
+    {
+        "timestamp": "2026-08-21T10:29:13.647310",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T10:29:13.661771",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 27"
+    },
+    {
+        "timestamp": "2026-08-21T10:29:13.668409",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T10:29:13.682759",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 28"
+    },
+    {
+        "timestamp": "2026-08-21T10:29:13.689030",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T10:29:13.700711",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 29"
+    },
+    {
+        "timestamp": "2026-08-21T10:29:13.706898",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T10:29:13.717912",
+        "username": "lockout_test",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 30"
+    },
+    {
+        "timestamp": "2026-08-21T10:29:13.723903",
+        "username": "lockout_test",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T13:22:05.556704",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-21T13:22:30.324093",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-21T13:27:58.699768",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 2"
+    },
+    {
+        "timestamp": "2026-08-21T13:28:27.606702",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 3"
+    },
+    {
+        "timestamp": "2026-08-21T13:28:27.611983",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-21T13:29:07.264203",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-21T13:30:06.250351",
+        "username": "monica",
+        "event": "SPOOF_ATTEMPT",
+        "details": "Spoof #1"
+    },
+    {
+        "timestamp": "2026-08-21T20:28:55.820873",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-21T20:29:21.527990",
+        "username": "eji",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-21T20:30:28.872761",
+        "username": "Chery",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-21T20:30:50.223709",
+        "username": "Chery",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to False by admin"
+    },
+    {
+        "timestamp": "2026-08-24T05:29:07.313747",
+        "username": "eji",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-24T05:29:29.953840",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-24T05:30:28.843868",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-24T05:30:28.852103",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-24T05:31:29.906181",
+        "username": "monica",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-24T05:31:55.739521",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-24T05:33:06.427454",
+        "username": "Chery",
+        "event": "AFTER_HOURS_TRUST_CHANGED",
+        "details": "Set to True by admin"
+    },
+    {
+        "timestamp": "2026-08-24T05:33:31.031501",
+        "username": "Chery",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-24T05:35:53.633987",
+        "username": "monica",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-24T05:35:53.643255",
+        "username": "monica",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-24T05:37:12.351891",
+        "username": "Chery",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-24T05:37:12.358423",
+        "username": "Chery",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-27T10:33:54.076556",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-27T10:34:44.556830",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T06:26:40.735804",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T06:26:40.741733",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T06:29:16.066267",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T06:31:48.668209",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T06:31:48.685836",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T06:38:23.059587",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T06:38:23.066024",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:24:15.821132",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:24:15.827934",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:25:00.387351",
+        "username": "monica",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:25:00.404306",
+        "username": "monica",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:25:54.634318",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T10:27:32.470594",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:27:32.488632",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:28:36.681618",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:28:36.688791",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:33:03.944174",
+        "username": "monica",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:33:03.952325",
+        "username": "monica",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:37:29.562388",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T10:38:56.795587",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:38:56.807645",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:39:26.098808",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T10:41:01.507498",
+        "username": "Chery",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:41:01.514627",
+        "username": "Chery",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:42:55.651610",
+        "username": "monica",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:42:55.661133",
+        "username": "monica",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:45:44.017166",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T10:46:25.882398",
+        "username": "Chery",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T10:47:03.922501",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:47:03.941834",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:48:12.377492",
+        "username": "monica",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:48:12.397972",
+        "username": "monica",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:50:04.207305",
+        "username": "israelonyedika",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T10:51:41.006044",
+        "username": "Chery",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:51:41.014805",
+        "username": "Chery",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:54:17.301756",
+        "username": "Chery",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:54:17.310093",
+        "username": "Chery",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T10:55:10.459648",
+        "username": "israelonyedika",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T10:58:46.059484",
+        "username": "israelonyedika",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 2"
+    },
+    {
+        "timestamp": "2026-08-28T11:59:34.750910",
+        "username": "eji",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-28T11:59:34.757440",
+        "username": "eji",
+        "event": "ACCOUNT_LOCKED",
+        "details": "full: Exceeded 5 total failed attempts"
+    },
+    {
+        "timestamp": "2026-08-28T12:01:24.769355",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T12:08:48.311581",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T12:09:26.630373",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-28T12:09:50.367074",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-31T10:46:05.926586",
+        "username": "monica",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-31T11:27:32.457091",
+        "username": "eji",
+        "event": "SUCCESS",
+        "details": "Login successful"
+    },
+    {
+        "timestamp": "2026-08-31T11:30:34.205454",
+        "username": "sharon",
+        "event": "FAILED_LOGIN",
+        "details": "Attempt 1"
+    },
+    {
+        "timestamp": "2026-08-31T11:38:30.270040",
+        "username": "Sharon",
+        "event": "SUCCESS",
+        "details": "Login successful"
     }
 ]

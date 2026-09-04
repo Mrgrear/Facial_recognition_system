@@ -1,6 +1,29 @@
+# Python environments
 venv/
 .venv/
-__pycache__/
-*.py[cod]
 .env
+.env.*
+
+# Python cache / compiled files
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+
+# Logs
 *.log
+
+# Local/editor files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Test/coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local generated runtime state
+*.tmp
+*.bak

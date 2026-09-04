@@ -27,3 +27,25 @@ htmlcov/
 # Local generated runtime state
 *.tmp
 *.bak
+
+# Biometric and runtime data
+# Keep real user data, embeddings, audit logs and local databases out of Git.
+db/*.json
+db/*.pkl
+db/*.pickle
+models/*.pkl
+models/*.pickle
+models/*.joblib
+models/*.onnx
+models/*.bin
+
+# Local datasets and captured images
+# Commit only synthetic/sample data that is explicitly safe to publish.
+dataset/raw/
+dataset/captured/
+dataset/private/
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.webp

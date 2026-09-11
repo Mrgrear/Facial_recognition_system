@@ -1,0 +1,17 @@
+# Core computer vision and biometrics
+opencv-python
+numpy
+Pillow
+insightface
+onnxruntime
+
+# Machine learning and data processing
+scikit-learn
+pandas
+matplotlib
+
+# System and network monitoring
+psutil
+
+# Optional: development/testing
+pytest
